@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="Digicorp_Components">
+    <declare-styleable name="DigicorpComponents">
 
         <!-- Custom asset font attributes -->
         <!-- name of the font file wit extension under asset folder -->

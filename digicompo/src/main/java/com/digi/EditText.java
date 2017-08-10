@@ -36,10 +36,10 @@ public class EditText extends AppCompatEditText {
         if (isInEditMode())
             return;
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Digicorp_Components, defStyle, 0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DigicorpComponents, defStyle, 0);
         if (typedArray != null) {
-            if (typedArray.hasValue(R.styleable.Digicorp_Components_font_path)) {
-                String assetFontFileName = typedArray.getString(R.styleable.Digicorp_Components_font_path);
+            if (typedArray.hasValue(R.styleable.DigicorpComponents_font_path)) {
+                String assetFontFileName = typedArray.getString(R.styleable.DigicorpComponents_font_path);
                 if (fontMap.containsKey(assetFontFileName) && fontMap.get(assetFontFileName) != null) {
                     setTypeface(fontMap.get(assetFontFileName));
                 } else {
