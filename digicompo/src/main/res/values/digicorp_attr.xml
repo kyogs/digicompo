@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Button">
+        <!-- Custom asset font attributes -->
+        <!-- name of the font file wit extension under asset folder -->
+        <attr name="font_path_" format="string" />
+    </declare-styleable>
+</resources>
