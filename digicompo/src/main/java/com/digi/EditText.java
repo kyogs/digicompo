@@ -7,8 +7,6 @@ import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 
 import java.io.FileNotFoundException;
-import java.util.WeakHashMap;
-
 
 /**
  *

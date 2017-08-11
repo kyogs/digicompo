@@ -7,7 +7,6 @@ import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 
 import java.io.FileNotFoundException;
-import java.util.WeakHashMap;
 
 /**
  * Created by kevin.adesara on 07/07/14.
