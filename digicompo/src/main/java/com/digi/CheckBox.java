@@ -15,8 +15,6 @@ import java.util.WeakHashMap;
  */
 public class CheckBox extends AppCompatCheckBox {
 
-    private static WeakHashMap<String, Typeface> fontMap = new WeakHashMap<>();
-
     public CheckBox(Context context) throws FileNotFoundException {
         super(context);
         init(context, null, 0);
@@ -36,20 +34,12 @@ public class CheckBox extends AppCompatCheckBox {
         if (isInEditMode())
             return;
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DigicorpComponents, defStyle, 0);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CheckBox, defStyle, 0);
         if (typedArray != null) {
-            if (typedArray.hasValue(R.styleable.DigicorpComponents_font_path)) {
-                String assetFontFileName = typedArray.getString(R.styleable.DigicorpComponents_font_path);
-                if (fontMap.containsKey(assetFontFileName) && fontMap.get(assetFontFileName) != null) {
-                    setTypeface(fontMap.get(assetFontFileName));
-                } else {
-                    Typeface typeface = Typeface.createFromAsset(context.getAssets(), assetFontFileName);
-                    if (typeface == null) {
-                        throw new FileNotFoundException("Font file not found mBufferIn asset : " + assetFontFileName);
-                    }
-                    fontMap.put(assetFontFileName, typeface);
-                    setTypeface(typeface);
-                }
+            if (typedArray.hasValue(R.styleable.CheckBox_font_path)) {
+                String assetFontFileName = typedArray.getString(R.styleable.CheckBox_font_path);
+                Typeface typeface = FontCache.get(context.getAssets(), assetFontFileName);
+                setTypeface(typeface);
             }
             typedArray.recycle();
         }
