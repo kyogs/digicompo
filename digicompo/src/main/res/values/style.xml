@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    </style>
+
     <style name="DigiAlertDialogStyle" parent="Theme.AppCompat.Dialog.Alert">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

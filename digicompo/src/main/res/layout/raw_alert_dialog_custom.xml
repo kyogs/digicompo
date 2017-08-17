@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:padding="@dimen/dp_20">
 
-        <com.lazyswitch.digicorp.TextView
+        <com.digi.TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
             android:textColor="@color/alert_title_color"
             android:textSize="@dimen/font_18_sp" />
 
-        <com.lazyswitch.digicorp.TextView
+        <com.digi.TextView
             android:id="@+id/tvMsg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -306,16 +306,17 @@ public class Utils {
      * show progress
      *
      * @param activity
+     * @param cancelable - set cancelable true or false
      * @return
      */
-    public static Dialog showProgress(Activity activity) {
+    public static Dialog showProgress(Activity activity, boolean cancelable) {
         Dialog dialog;
-        dialog = new Dialog(activity);
+        dialog = new Dialog(activity, R.style.AppTheme);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.custome_progress_dialog);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         dialog.show();
-        dialog.setCancelable(false);
+        dialog.setCancelable(cancelable);
         return dialog;
     }
 
@@ -336,12 +337,12 @@ public class Utils {
      * show alert dialog
      *
      * @param context
-     * @param title                - main title
-     * @param message              - message
-     * @param positiveButtonTitle  - positive button name
-     * @param negativeButtonTitle  - negative button name
-     * @param dialogClickListener- button listener
-     * @param cancelable           - set cancelable true or false
+     * @param title               - main title
+     * @param message             - message
+     * @param positiveButtonTitle - positive button name
+     * @param negativeButtonTitle - negative button name
+     * @param dialogClickListener - button listener
+     * @param cancelable          - set cancelable true or false
      */
     public static void showAlert(Context context, String title, CharSequence message, String positiveButtonTitle, String negativeButtonTitle, DialogInterface.OnClickListener dialogClickListener, boolean cancelable, boolean isAnimation) {
         AlertDialog.Builder ab = new AlertDialog.Builder(context, R.style.DigiAlertDialogStyle);

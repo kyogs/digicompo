@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="progress_color">#FF4081</color>
+    <color name="alert_positive_btn_color">#3F51B5</color>
+    <color name="alert_negative_btn_color">#212121</color>
+    <color name="alert_title_color">#303F9F</color>
+    <color name="alert_message_color">#FF4081</color>
 </resources>
