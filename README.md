@@ -1,16 +1,16 @@
 # Custom component and Common function
-  This library is used to set custom font for Textview, Button, Exittext and Checkbox. Also included reusable functions and
+  This library is used to set custom font for Textview, Button, EditText and Checkbox. It also includes reusable functions and
   common alert dialog.
 
 # Features
-  * Set font for Textview, Button, Exittext and Checkbox by writing just online in XML.
+  * Set font for Textview, Button, EditText and Checkbox by writing just one line in XML.
   * Common methods.
-  * Alert dialog in which we can set color of buttton and textview.
+  * Alert dialog in which we can set color of Button and TextView.
   * Progress dialog.
   
 #  Usage
-  * Define Texview as show in blow example.
-   **Font/Roboto_Medium.ttf** is Roboto Medium Font file which placed in *assets/Font* directory.
+  * Define TextView as shown in below example.
+   **Font/Roboto_Medium.ttf** is Roboto Medium Font file which is placed in *assets/Font* directory.
 
 ```XML
    <com.digi.TextView
@@ -23,18 +23,17 @@
         app:font_path="Font/Roboto_Medium.ttf" />
 ```
 
-*  Progress dialog used for block intraction with UI for some Task.
+*  Progress dialog used for preventing user interaction (meanwhile) with UI.
 
-    For show dialog write below code
+    To show dialog, write below code:
 ```java   
-    Dialog dialog = Utils.showProgress(this, false)
+    Dialog dialog = Utils.showProgress(this, isCancelable)
 ```
-      For hide dialog use below code
+      To hide dialog, use below code:
       
 ```java
     Utils.hideProgress(dialog)
 ```
-     For dismiss on back button Utils.showProgress(this, true)
      
  * How to show alert dialog?
  
