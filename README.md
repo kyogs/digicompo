@@ -8,6 +8,20 @@
   * Alert dialog in which we can set color of Button and TextView.
   * Progress dialog.
   
+   Add it in your root build.gradle at the end of repositories:
+```java 
+  allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+   Add the dependency:
+```java 
+  compile 'com.github.kyogs:digicompo:v1.7'
+```
+
 #  Usage
   * Define TextView as shown in below example.
    **Font/Roboto_Medium.ttf** is Roboto Medium Font file which is placed in *assets/Font* directory.
