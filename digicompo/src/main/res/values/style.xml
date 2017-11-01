@@ -28,7 +28,7 @@
 
     <!-- Grow animation -->
     <style name="CustomAnimations_grow">
-        <item name="@android:windowEnterAnimation">@anim/grow_out</item>
-        <item name="@android:windowExitAnimation">@anim/grow_in</item>
+        <item name="android:windowEnterAnimation">@anim/grow_out</item>
+        <item name="android:windowExitAnimation">@anim/grow_in</item>
     </style>
 </resources>
