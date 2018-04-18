@@ -1,7 +1,9 @@
 package com.digi;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -10,8 +12,13 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
 import android.provider.Settings;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 
 import java.io.ByteArrayOutputStream;
@@ -293,6 +300,77 @@ public class Utils {
         DisplayMetrics metrics = resources.getDisplayMetrics();
         float px = dp * ((float) metrics.densityDpi / DisplayMetrics.DENSITY_DEFAULT);
         return px;
+    }
+
+    /**
+     * show progress
+     *
+     * @param activity
+     * @param cancelable - set cancelable true or false
+     * @return
+     */
+    public static Dialog showProgress(Activity activity, boolean cancelable) {
+        Dialog dialog;
+        dialog = new Dialog(activity, R.style.AppTheme);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.custome_progress_dialog);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.show();
+        dialog.setCancelable(cancelable);
+        return dialog;
+    }
+
+    /**
+     * hide progress
+     *
+     * @param dialog
+     */
+    public static void hideProgress(Dialog dialog) {
+        if (dialog != null) {
+            if (dialog.isShowing()) {
+                dialog.dismiss();
+            }
+        }
+    }
+
+    /**
+     * show alert dialog
+     *
+     * @param context
+     * @param title               - main title
+     * @param message             - message
+     * @param positiveButtonTitle - positive button name
+     * @param negativeButtonTitle - negative button name
+     * @param dialogClickListener - button listener
+     * @param cancelable          - set cancelable true or false
+     */
+    public static void showAlert(Context context, String title, CharSequence message, String positiveButtonTitle, String negativeButtonTitle, DialogInterface.OnClickListener dialogClickListener, boolean cancelable, boolean isAnimation) {
+        AlertDialog.Builder ab = new AlertDialog.Builder(context, R.style.DigiAlertDialogStyle);
+        LayoutInflater inflater = ((AppCompatActivity) context).getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.raw_alert_dialog_custom, null);
+        ab.setView(dialogView);
+        TextView tvTitle, tvDescription;
+        tvTitle = (TextView) dialogView.findViewById(R.id.tvTitle);
+        tvDescription = (TextView) dialogView.findViewById(R.id.tvMsg);
+        if (title.length() == 0) {
+            tvTitle.setVisibility(View.GONE);
+        } else {
+            tvTitle.setText(title);
+        }
+        if (negativeButtonTitle.length() != 0) {
+            ab.setNegativeButton(negativeButtonTitle, dialogClickListener);
+        }
+        tvDescription.setText(message);
+        ab.setPositiveButton(positiveButtonTitle, dialogClickListener);
+        AlertDialog dialog = ab.create();
+        dialog.setCancelable(cancelable);
+        try {
+            if (isAnimation)
+                dialog.getWindow().getAttributes().windowAnimations = R.style.CustomAnimations_grow;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        dialog.show();
     }
 
 }
