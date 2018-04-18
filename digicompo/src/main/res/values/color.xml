@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="progress_color">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="alert_positive_btn_color">#2baa99</color>
+    <color name="alert_negative_btn_color">#212121</color>
+    <color name="alert_title_color">#212121</color>
+    <color name="alert_message_color">#454545</color>
+</resources>

@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ComponantLib.iml" filepath="$PROJECT_DIR$/ComponantLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/digicompo.iml" filepath="$PROJECT_DIR$/digicompo.iml" />
       <module fileurl="file://$PROJECT_DIR$/digicompo/digicompo.iml" filepath="$PROJECT_DIR$/digicompo/digicompo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/digicompo/digicompo-digicompo.iml" filepath="$PROJECT_DIR$/digicompo/digicompo-digicompo.iml" />
     </modules>
   </component>
 </project>

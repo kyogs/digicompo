@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    </style>
+
+    <style name="DigiAlertDialogStyle" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="buttonBarPositiveButtonStyle">@style/positiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/negativeButtonStyle</item>
+    </style>
+
+    <style name="positiveButtonStyle">
+        <item name="android:textColor">@color/alert_positive_btn_color</item>
+        <item name="android:textSize">@dimen/font_14_sp</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
+    <style name="negativeButtonStyle">
+        <item name="android:textColor">@color/alert_negative_btn_color</item>
+        <item name="android:textSize">@dimen/font_14_sp</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+    </style>
+
+    <!-- Grow animation -->
+    <style name="CustomAnimations_grow">
+        <item name="android:windowEnterAnimation">@anim/grow_out</item>
+        <item name="android:windowExitAnimation">@anim/grow_in</item>
+    </style>
+</resources>
